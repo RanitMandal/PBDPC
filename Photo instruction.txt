@@ -1,0 +1,873 @@
+অবশ্যই। এখন আমাদের **PBDPC website-এর final structure** একবার পরিষ্কার করে নেওয়া ভালো। এরপর আমরা page-by-page code এবং image assets তৈরি করব।
+
+নিচের structure-টাই আমি recommend করছি।
+
+# PBDPC Website — Final File Structure
+
+```text
+PBDPC/
+│
+├── index.html
+├── about.html
+├── history.html
+├── temple.html
+├── gallery.html
+├── committee.html
+├── events.html
+├── sponsors.html
+├── donation.html
+├── contact.html
+├── privacy.html
+├── terms.html
+├── 404.html
+│
+├── robots.txt
+├── sitemap.xml
+├── manifest.json
+├── service-worker.js
+│
+│
+├── components/
+│   ├── header.html
+│   └── footer.html
+│
+│
+├── assets/
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── components.js
+│   │   └── config.js
+│   │
+│   │
+│   ├── images/
+│   │   │
+│   │   ├── logo.png
+│   │   │
+│   │   ├── home/
+│   │   │   ├── hero1.jpg
+│   │   │   ├── hero2.jpg
+│   │   │   └── hero3.jpg
+│   │   │
+│   │   ├── about/
+│   │   │   ├── about-main.jpg
+│   │   │   ├── committee.jpg
+│   │   │   └── community.jpg
+│   │   │
+│   │   ├── history/
+│   │   │   ├── old-temple.jpg
+│   │   │   ├── history-01.jpg
+│   │   │   ├── history-02.jpg
+│   │   │   ├── history-03.jpg
+│   │   │   └── history-04.jpg
+│   │   │
+│   │   ├── temple/
+│   │   │   ├── temple-main.jpg
+│   │   │   ├── temple-front.jpg
+│   │   │   ├── temple-interior.jpg
+│   │   │   ├── maa-durga.jpg
+│   │   │   └── temple-detail.jpg
+│   │   │
+│   │   ├── gallery/
+│   │   │   ├── durga-puja/
+│   │   │   ├── cultural/
+│   │   │   ├── immersion/
+│   │   │   ├── community/
+│   │   │   └── old-memories/
+│   │   │
+│   │   ├── committee/
+│   │   │   ├── committee-group.jpg
+│   │   │   ├── president.jpg
+│   │   │   ├── secretary.jpg
+│   │   │   ├── treasurer.jpg
+│   │   │   └── members/
+│   │   │
+│   │   ├── events/
+│   │   │   ├── durga-puja.jpg
+│   │   │   ├── lakshmi-puja.jpg
+│   │   │   ├── kali-puja.jpg
+│   │   │   ├── ram-navami.jpg
+│   │   │   └── other-events.jpg
+│   │   │
+│   │   ├── sponsors/
+│   │   │   ├── current/
+│   │   │   ├── previous/
+│   │   │   └── upcoming/
+│   │   │
+│   │   └── donation/
+│   │       ├── donation-banner.jpg
+│   │       └── qr-code.png
+│   │
+│   ├── videos/
+│   │   ├── home/
+│   │   ├── gallery/
+│   │   ├── sponsors/
+│   │   └── events/
+│   │
+│   └── icons/
+│       ├── favicon.png
+│       ├── apple-touch-icon.png
+│       └── ...
+│
+└── downloads/
+    ├── sponsorship-brochure.pdf
+    └── ...
+```
+
+---
+
+# 1. `index.html`
+
+### Location
+
+```text
+PBDPC/index.html
+```
+
+### Purpose
+
+Homepage.
+
+### Images needed
+
+```text
+assets/images/logo.png
+
+assets/images/home/hero1.jpg
+assets/images/home/hero2.jpg
+assets/images/home/hero3.jpg
+```
+
+### Hero image
+
+আপনার বর্তমান screenshot-এর temple image:
+
+```text
+hero1.jpg
+```
+
+এটাই current primary hero image।
+
+### Image type
+
+Recommended:
+
+* JPG / WebP
+* Landscape
+* Minimum: **1920 × 1080**
+* Better: **1920 × 1200**
+* File size ideally < 500 KB after compression
+
+---
+
+# 2. `about.html`
+
+```text
+PBDPC/about.html
+```
+
+### Images
+
+```text
+assets/images/about/about-main.jpg
+assets/images/about/committee.jpg
+assets/images/about/community.jpg
+```
+
+### Image type
+
+Historical/community photographs.
+
+Recommended:
+
+```text
+1600 × 1000
+```
+
+Landscape preferred.
+
+---
+
+# 3. `history.html`
+
+```text
+PBDPC/history.html
+```
+
+এটা আমাদের website-এর অন্যতম গুরুত্বপূর্ণ page হবে, কারণ PBDPC:
+
+> Established 1948
+
+### Images
+
+```text
+assets/images/history/old-temple.jpg
+
+assets/images/history/history-01.jpg
+assets/images/history/history-02.jpg
+assets/images/history/history-03.jpg
+assets/images/history/history-04.jpg
+```
+
+### কী ধরনের ছবি?
+
+পুরনো:
+
+* Temple
+* Puja
+* Committee
+* Protappur area
+* পুরনো প্রতিমা
+* পুরনো অনুষ্ঠান
+* পুরনো documents/photos
+
+### Special
+
+পুরনো ছবি হলে resolution কম হলেও চলবে।
+
+এক্ষেত্রে:
+
+```text
+1200 × 800
+```
+
+যথেষ্ট।
+
+---
+
+# 4. `temple.html`
+
+```text
+PBDPC/temple.html
+```
+
+### Images
+
+```text
+assets/images/temple/temple-main.jpg
+assets/images/temple/temple-front.jpg
+assets/images/temple/temple-interior.jpg
+assets/images/temple/maa-durga.jpg
+assets/images/temple/temple-detail.jpg
+```
+
+### কী ধরনের ছবি?
+
+* Temple front
+* Main entrance
+* Maa Durga
+* Temple interior
+* Architecture
+* Puja mandap
+* Evening/night view
+
+### Recommended
+
+Main image:
+
+```text
+1920 × 1200
+```
+
+Others:
+
+```text
+1200 × 800
+```
+
+---
+
+# 5. `gallery.html`
+
+```text
+PBDPC/gallery.html
+```
+
+এটা হবে **image-heavy page**।
+
+Folder structure:
+
+```text
+assets/images/gallery/
+```
+
+এর মধ্যে:
+
+```text
+gallery/
+│
+├── durga-puja/
+│
+├── cultural/
+│
+├── immersion/
+│
+├── community/
+│
+└── old-memories/
+```
+
+### Example
+
+```text
+assets/images/gallery/durga-puja/2025-01.jpg
+assets/images/gallery/durga-puja/2025-02.jpg
+
+assets/images/gallery/cultural/cultural-01.jpg
+
+assets/images/gallery/immersion/immersion-01.jpg
+
+assets/images/gallery/community/community-01.jpg
+
+assets/images/gallery/old-memories/old-01.jpg
+```
+
+### এখানে Photo + Video দুটোই থাকবে
+
+```text
+assets/videos/gallery/
+```
+
+এবং:
+
+```text
+assets/images/gallery/
+```
+
+---
+
+# 6. `committee.html`
+
+```text
+PBDPC/committee.html
+```
+
+### Images
+
+```text
+assets/images/committee/committee-group.jpg
+```
+
+তারপর:
+
+```text
+assets/images/committee/president.jpg
+assets/images/committee/secretary.jpg
+assets/images/committee/treasurer.jpg
+```
+
+Members:
+
+```text
+assets/images/committee/members/
+```
+
+Example:
+
+```text
+members/member-01.jpg
+members/member-02.jpg
+members/member-03.jpg
+```
+
+### Image type
+
+Portrait:
+
+```text
+600 × 600
+```
+
+বা:
+
+```text
+800 × 800
+```
+
+সব committee member-এর photo **same ratio** হওয়া উচিত।
+
+---
+
+# 7. `events.html`
+
+```text
+PBDPC/events.html
+```
+
+### Images
+
+```text
+assets/images/events/durga-puja.jpg
+assets/images/events/lakshmi-puja.jpg
+assets/images/events/kali-puja.jpg
+assets/images/events/ram-navami.jpg
+assets/images/events/other-events.jpg
+```
+
+### Image type
+
+Landscape:
+
+```text
+1200 × 800
+```
+
+---
+
+# 8. `sponsors.html`
+
+এটা আমাদের আগের discussion অনুযায়ী **special page** হবে।
+
+```text
+PBDPC/sponsors.html
+```
+
+এখানে থাকবে:
+
+### Current Sponsors
+
+```text
+assets/images/sponsors/current/
+```
+
+### Previous Sponsors
+
+```text
+assets/images/sponsors/previous/
+```
+
+### Upcoming Sponsors
+
+```text
+assets/images/sponsors/upcoming/
+```
+
+Example:
+
+```text
+current/
+├── sponsor-01.png
+├── sponsor-02.png
+└── sponsor-03.png
+
+previous/
+├── 2025-sponsor-01.png
+└── 2025-sponsor-02.png
+
+upcoming/
+├── sponsor-placeholder.png
+```
+
+### Sponsor image type
+
+সবচেয়ে ভালো:
+
+**PNG with transparent background**
+
+কারণ logo website card-এ সুন্দর দেখাবে।
+
+Recommended:
+
+```text
+1200 × 600
+```
+
+বা logo-এর actual ratio maintain করে।
+
+---
+
+# 9. Sponsor Social Media / Video / Paid Advertisement
+
+আপনার requirement অনুযায়ী Sponsors page-এ আমরা future-ready রাখব।
+
+Structure:
+
+```text
+assets/videos/sponsors/
+```
+
+Example:
+
+```text
+sponsor-2026-video.mp4
+```
+
+এবং sponsor-এর promotional images:
+
+```text
+assets/images/sponsors/current/
+```
+
+Paid promotional content-এর জন্য:
+
+```text
+assets/images/sponsors/ads/
+```
+
+আমি recommend করব final structure:
+
+```text
+sponsors/
+│
+├── current/
+├── previous/
+├── upcoming/
+├── ads/
+└── social/
+```
+
+---
+
+# 10. `donation.html`
+
+```text
+PBDPC/donation.html
+```
+
+### Images
+
+```text
+assets/images/donation/donation-banner.jpg
+assets/images/donation/qr-code.png
+```
+
+### Banner
+
+Landscape:
+
+```text
+1920 × 800
+```
+
+### QR
+
+PNG:
+
+```text
+1000 × 1000
+```
+
+QR-এর চারপাশে white space রাখতে হবে।
+
+---
+
+# 11. `contact.html`
+
+```text
+PBDPC/contact.html
+```
+
+এখানে সাধারণত image দরকার নেই।
+
+তবে চাইলে:
+
+```text
+assets/images/contact/contact.jpg
+```
+
+দেওয়া যায়।
+
+### Map
+
+Image নয়।
+
+Google Maps / Maps embed ব্যবহার করব।
+
+বর্তমান:
+
+```text
+YOUR_GOOGLE_MAP_EMBED_LINK
+```
+
+**রাখব না।**
+
+---
+
+# 12. `privacy.html`
+
+```text
+PBDPC/privacy.html
+```
+
+Image দরকার নেই।
+
+---
+
+# 13. `terms.html`
+
+```text
+PBDPC/terms.html
+```
+
+Image দরকার নেই।
+
+---
+
+# 14. `404.html`
+
+```text
+PBDPC/404.html
+```
+
+### Optional image
+
+```text
+assets/images/404/404.png
+```
+
+কিন্তু আমি এখানে image না দিয়ে সুন্দর CSS-based 404 design রাখার পক্ষপাতী।
+
+---
+
+# 15. Header
+
+```text
+PBDPC/components/header.html
+```
+
+Header-এর জন্য:
+
+```text
+assets/images/logo.png
+```
+
+### Logo
+
+Recommended:
+
+```text
+PNG
+transparent background
+```
+
+Example:
+
+```text
+800 × 800
+```
+
+Actual logo circular হলে square image রাখাই ভালো।
+
+---
+
+# 16. Footer
+
+```text
+PBDPC/components/footer.html
+```
+
+Footer-এর জন্য মূলত:
+
+```text
+assets/images/logo.png
+```
+
+ব্যবহার হবে।
+
+Footer-এ আলাদা Gallery image দরকার নেই।
+
+---
+
+# 17. CSS
+
+```text
+PBDPC/assets/css/style.css
+```
+
+সব page-এর common CSS এখানে থাকবে।
+
+---
+
+# 18. JavaScript
+
+```text
+PBDPC/assets/js/
+```
+
+### `app.js`
+
+```text
+assets/js/app.js
+```
+
+Page interactions:
+
+* Slider
+* Gallery
+* Back to top
+* Animations
+* Forms
+* General UI
+
+### `components.js`
+
+```text
+assets/js/components.js
+```
+
+এখানে:
+
+* Dynamic Header
+* Dynamic Footer
+* Component loading
+* Active menu
+* Dynamic year
+
+### `config.js`
+
+```text
+assets/js/config.js
+```
+
+এখানে:
+
+* Website URL
+* Site name
+* Social links
+* Contact information
+* Configuration
+
+---
+
+# 19. PWA Files
+
+Root folder:
+
+```text
+PBDPC/
+├── manifest.json
+├── service-worker.js
+```
+
+### PWA icons
+
+```text
+assets/icons/
+```
+
+প্রধানত:
+
+```text
+favicon.png
+apple-touch-icon.png
+```
+
+এছাড়া PWA-এর জন্য:
+
+```text
+icon-192.png
+icon-512.png
+```
+
+রাখা ভালো।
+
+---
+
+# 20. SEO Files
+
+Root:
+
+```text
+robots.txt
+sitemap.xml
+```
+
+Website URL:
+
+```text
+https://ranitmandal.github.io/PBDPC/
+```
+
+---
+
+# Image Requirements — Summary
+
+| Page             | Images                                   |
+| ---------------- | ---------------------------------------- |
+| `index.html`     | 3 Hero + feature images                  |
+| `about.html`     | 3                                        |
+| `history.html`   | 5+ historical                            |
+| `temple.html`    | 5                                        |
+| `gallery.html`   | অনেকগুলো                                 |
+| `committee.html` | Group + member portraits                 |
+| `events.html`    | 5                                        |
+| `sponsors.html`  | Sponsor logos + ads + promotional images |
+| `donation.html`  | Banner + QR                              |
+| `contact.html`   | Optional 1                               |
+| `privacy.html`   | None                                     |
+| `terms.html`     | None                                     |
+| `404.html`       | Optional                                 |
+
+---
+
+# Image Naming Convention
+
+আমরা এখন থেকে random নাম ব্যবহার করব না।
+
+### ❌ এভাবে নয়
+
+```text
+IMG_20250625_1234.jpg
+DSC00983.jpg
+photo1.jpg
+newimage.jpg
+final-final.jpg
+```
+
+### ✅ এভাবে
+
+```text
+hero1.jpg
+temple-front.jpg
+maa-durga.jpg
+history-01.jpg
+history-02.jpg
+committee-group.jpg
+president.jpg
+durga-puja.jpg
+```
+
+এতে website maintain করা অনেক সহজ হবে।
+
+---
+
+# সবচেয়ে গুরুত্বপূর্ণ — Image Folder
+
+আপনার বর্তমান project-এ এখন থেকেই এই folders বানিয়ে রাখুন:
+
+```text
+assets/images/
+│
+├── home/
+├── about/
+├── history/
+├── temple/
+├── gallery/
+├── committee/
+├── events/
+├── sponsors/
+│   ├── current/
+│   ├── previous/
+│   ├── upcoming/
+│   ├── ads/
+│   └── social/
+│
+├── donation/
+├── contact/
+└── 404/
+```
+
+আর:
+
+```text
+assets/videos/
+├── home/
+├── gallery/
+├── sponsors/
+└── events/
+```
+
+**এটাই আমাদের final asset architecture হিসেবে ধরে এগোনো ভালো।** এরপর প্রতিটি page-এর HTML বানানোর সময় আমি এই exact path-ই ব্যবহার করব, যাতে পরে আবার image-path bug না হয়।

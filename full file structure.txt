@@ -1,0 +1,187 @@
+হ্যাঁ, **`index.html` অবশ্যই `PBDPC/` root folder-এর ভিতরে থাকবে**, `assets/`-এর ভিতরে নয়।
+
+আপনার structure-টা হবে এভাবে:
+
+```text
+PBDPC/
+│
+├── index.html
+│
+├── about.html
+├── history.html
+├── temple.html
+├── gallery.html
+├── committee.html
+├── events.html
+├── sponsors.html
+├── donation.html
+├── contact.html
+├── privacy.html
+├── terms.html
+├── 404.html
+│
+├── components/
+│   ├── header.html
+│   └── footer.html
+│
+├── assets/
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── components.js
+│   │   └── config.js
+│   │
+│   └── images/
+│       │
+│       ├── logo.png
+│       │
+│       ├── home/
+│       │   ├── hero1.jpg
+│       │   ├── hero2.jpg
+│       │   └── hero3.jpg
+│       │
+│       ├── about/
+│       │   ├── about-main.jpg
+│       │   ├── committee.jpg
+│       │   └── community.jpg
+│       │
+│       ├── history/
+│       │   ├── old-temple.jpg
+│       │   ├── history-01.jpg
+│       │   ├── history-02.jpg
+│       │   ├── history-03.jpg
+│       │   └── history-04.jpg
+│       │
+│       ├── temple/
+│       │   ├── temple-main.jpg
+│       │   ├── temple-front.jpg
+│       │   ├── temple-interior.jpg
+│       │   ├── maa-durga.jpg
+│       │   └── temple-detail.jpg
+│       │
+│       ├── gallery/
+│       │   ├── durga-puja/
+│       │   ├── cultural/
+│       │   ├── immersion/
+│       │   ├── community/
+│       │   └── old-memories/
+│       │
+│       ├── committee/
+│       │   ├── committee-group.jpg
+│       │   ├── president.jpg
+│       │   ├── secretary.jpg
+│       │   ├── treasurer.jpg
+│       │   └── members/
+│       │
+│       ├── events/
+│       │   ├── durga-puja.jpg
+│       │   ├── lakshmi-puja.jpg
+│       │   ├── kali-puja.jpg
+│       │   ├── ram-navami.jpg
+│       │   └── other-events.jpg
+│       │
+│       ├── sponsors/
+│       │   ├── current/
+│       │   ├── previous/
+│       │   └── upcoming/
+│       │
+│       └── donation/
+│           ├── donation-banner.jpg
+│           └── qr-code.png
+│
+├── manifest.json
+├── service-worker.js
+├── robots.txt
+├── sitemap.xml
+└── README.md
+```
+
+### সবচেয়ে গুরুত্বপূর্ণ path
+
+যেহেতু `index.html` root-এ:
+
+```text
+PBDPC/index.html
+```
+
+তাই CSS হবে:
+
+```html
+<link rel="stylesheet" href="assets/css/style.css">
+```
+
+JS হবে:
+
+```html
+<script src="assets/js/config.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/app.js"></script>
+```
+
+Logo:
+
+```html
+<img src="assets/images/logo.png" alt="PBDPC Logo">
+```
+
+Hero:
+
+```html
+<img src="assets/images/home/hero1.jpg" alt="Protappur Baroari Durga Puja Temple">
+```
+
+Header component:
+
+```html
+<div id="header"></div>
+```
+
+Footer component:
+
+```html
+<div id="footer"></div>
+```
+
+---
+
+### আর একটা গুরুত্বপূর্ণ বিষয়
+
+**সব HTML page root-এই থাকবে।**
+
+অর্থাৎ:
+
+```text
+PBDPC/
+├── index.html
+├── about.html
+├── history.html
+├── temple.html
+├── gallery.html
+├── committee.html
+├── events.html
+├── sponsors.html
+├── donation.html
+└── contact.html
+```
+
+`assets/`-এর ভিতরে কোনো HTML page রাখব না।
+
+এতে navigation খুব simple হবে:
+
+```html
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="history.html">History</a>
+<a href="temple.html">Temple</a>
+<a href="gallery.html">Gallery</a>
+<a href="committee.html">Committee</a>
+<a href="events.html">Events</a>
+<a href="sponsors.html">Sponsors</a>
+<a href="donation.html">Donate</a>
+<a href="contact.html">Contact</a>
+```
+
+এটাই আমাদের **final project structure** হিসেবে ধরে পরের code তৈরি করা উচিত।

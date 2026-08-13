@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==================================================
+         BASIC META
+    ================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="theme-color" content="#8B0000">
+
+
+    <!-- ==================================================
+         TITLE
+    ================================================== -->
+
+    <title>
+        404 - Page Not Found | PBDPC
+    </title>
+
+
+    <!-- ==================================================
+         DESCRIPTION
+    ================================================== -->
+
+    <meta name="description"
+        content="The page you are looking for could not be found. Visit the official Protappur Baroari Durga Puja Committee website.">
+
+
+    <!-- ==================================================
+         CANONICAL
+    ================================================== -->
+
+    <link rel="canonical" href="https://ranitmandal.github.io/PBDPC/404.html">
+
+
+    <!-- ==================================================
+         PWA MANIFEST
+    ================================================== -->
+
+    <link rel="manifest" href="/PBDPC/manifest.json">
+
+
+    <!-- ==================================================
+         FAVICON
+    ================================================== -->
+
+    <link rel="icon" type="image/png" href="/PBDPC/assets/images/logo.png">
+
+
+    <!-- ==================================================
+         APPLE TOUCH ICON
+    ================================================== -->
+
+    <link rel="apple-touch-icon" href="/PBDPC/assets/images/logo.png">
+
+
+    <!-- ==================================================
+         GOOGLE FONTS
+    ================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- ==================================================
+         FONT AWESOME
+    ================================================== -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ==================================================
+         MAIN WEBSITE CSS
+    ================================================== -->
+
+    <link rel="stylesheet" href="/PBDPC/assets/css/style.css">
+
+    <link rel="stylesheet" href="/PBDPC/assets/css/fixes.css">
+
+
+    <!-- ==================================================
+         404 PAGE CSS
+    ================================================== -->
+
+    <style>
+        /* ==================================================
+           404 PAGE VARIABLES
+        ================================================== */
+
+        :root {
+
+            --error-red: #8B0000;
+
+            --error-red-dark: #650000;
+
+            --error-gold: #C9A227;
+
+            --error-text: #222222;
+
+            --error-muted: #666666;
+
+            --error-border: #E8E8E8;
+
+            --error-bg: #F7F4EE;
+
+        }
+
+
+        /* ==================================================
+           RESET
+        ================================================== */
+
+        .pbdpc-error-page,
+        .pbdpc-error-page * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        .pbdpc-error-page {
+
+            min-height: 100vh;
+
+            min-height: 100dvh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 50px 20px;
+
+            background:
+
+                linear-gradient(rgba(247, 244, 238, 0.7),
+                    rgba(247, 244, 238, 0.7)),
+
+                url("/assets/images/home/hero1.png") center center / cover no-repeat;
+
+        }
+
+
+        /* ==================================================
+           DECORATIVE TOP LINE
+        ================================================== */
+
+        .pbdpc-error-page::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 5px;
+
+            background:
+
+                linear-gradient(90deg,
+                    var(--error-red),
+                    var(--error-gold),
+                    var(--error-red));
+
+        }
+
+
+        /* ==================================================
+           DECORATIVE CIRCLE
+        ================================================== */
+
+        .pbdpc-error-page::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            right: -180px;
+
+            bottom: -190px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(139, 0, 0, 0.10);
+
+            pointer-events: none;
+
+        }
+
+
+        /* ==================================================
+           CONTENT WRAPPER
+        ================================================== */
+
+        .pbdpc-error-wrapper {
+
+            width: 100%;
+
+            max-width: 760px;
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+        }
+
+
+        /* ==================================================
+           ERROR CARD
+        ================================================== */
+
+        .pbdpc-error-card {
+
+            position: relative;
+
+            padding: 55px 55px 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border:
+
+                1px solid rgba(139, 0, 0, 0.10);
+
+            border-radius: 8px;
+
+            box-shadow:
+
+                0 25px 70px rgba(0, 0, 0, 0.12);
+
+        }
+
+
+        /* ==================================================
+           LOGO
+        ================================================== */
+
+        .pbdpc-error-logo {
+
+            width: 82px;
+
+            height: 82px;
+
+            display: block;
+
+            margin: 0 auto 22px;
+
+            object-fit: contain;
+
+        }
+
+
+        /* ==================================================
+           SMALL LABEL
+        ================================================== */
+
+        .pbdpc-error-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-bottom: 12px;
+
+            color: var(--error-red);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .pbdpc-error-label::before,
+        .pbdpc-error-label::after {
+
+            content: "";
+
+            width: 25px;
+
+            height: 1px;
+
+            background: var(--error-gold);
+
+        }
+
+
+        /* ==================================================
+           404 NUMBER
+        ================================================== */
+
+        .pbdpc-error-code {
+
+            margin: 0;
+
+            color: var(--error-red);
+
+            font-family:
+
+                "Cormorant Garamond",
+
+                Georgia,
+
+                "Times New Roman",
+
+                serif;
+
+            font-size: clamp(110px,
+                    18vw,
+                    190px);
+
+            font-weight: 700;
+
+            line-height: 0.78;
+
+            letter-spacing: -5px;
+
+        }
+
+
+        /* ==================================================
+           TITLE
+        ================================================== */
+
+        .pbdpc-error-title {
+
+            margin:
+
+                28px 0 12px;
+
+            color: var(--error-text);
+
+            font-family:
+
+                "Cormorant Garamond",
+
+                Georgia,
+
+                "Times New Roman",
+
+                serif;
+
+            font-size: clamp(32px,
+                    5vw,
+                    46px);
+
+            font-weight: 700;
+
+            line-height: 1.1;
+
+        }
+
+
+        /* ==================================================
+           MESSAGE
+        ================================================== */
+
+        .pbdpc-error-message {
+
+            max-width: 590px;
+
+            margin:
+
+                0 auto 28px;
+
+            color: var(--error-muted);
+
+            font-family:
+
+                "Poppins",
+
+                Arial,
+
+                sans-serif;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* ==================================================
+           BUTTONS
+        ================================================== */
+
+        .pbdpc-error-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+        }
+
+
+        .pbdpc-error-btn {
+
+            min-width: 165px;
+
+            min-height: 48px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+
+                12px 24px;
+
+            border-radius: 4px;
+
+            font-family:
+
+                "Poppins",
+
+                Arial,
+
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition:
+
+                all 0.25s ease;
+
+        }
+
+
+        /* ==================================================
+           PRIMARY BUTTON
+        ================================================== */
+
+        .pbdpc-error-btn-primary {
+
+            background:
+
+                var(--error-red);
+
+            color: #ffffff;
+
+            border:
+
+                1px solid var(--error-red);
+
+        }
+
+
+        .pbdpc-error-btn-primary:hover {
+
+            background:
+
+                var(--error-red-dark);
+
+            border-color:
+
+                var(--error-red-dark);
+
+            transform:
+
+                translateY(-2px);
+
+            box-shadow:
+
+                0 8px 20px rgba(139, 0, 0, 0.20);
+
+        }
+
+
+        /* ==================================================
+           SECONDARY BUTTON
+        ================================================== */
+
+        .pbdpc-error-btn-secondary {
+
+            background:
+
+                #ffffff;
+
+            color:
+
+                var(--error-red);
+
+            border:
+
+                1px solid var(--error-red);
+
+        }
+
+
+        .pbdpc-error-btn-secondary:hover {
+
+            background:
+
+                var(--error-red);
+
+            color:
+
+                #ffffff;
+
+            transform:
+
+                translateY(-2px);
+
+        }
+
+
+        /* ==================================================
+           DIVIDER
+        ================================================== */
+
+        .pbdpc-error-divider {
+
+            width: 70px;
+
+            height: 1px;
+
+            margin:
+
+                32px auto 22px;
+
+            background:
+
+                var(--error-gold);
+
+        }
+
+
+        /* ==================================================
+           FOOTER TEXT
+        ================================================== */
+
+        .pbdpc-error-brand {
+
+            margin: 0;
+
+            color: #555555;
+
+            font-family:
+
+                "Poppins",
+
+                Arial,
+
+                sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .pbdpc-error-brand strong {
+
+            color:
+
+                var(--error-red);
+
+            font-weight: 700;
+
+        }
+
+
+        .pbdpc-error-motto {
+
+            margin-top: 4px;
+
+            color: #999999;
+
+            font-size: 12px;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 600px) {
+
+            .pbdpc-error-page {
+
+                padding:
+
+                    30px 15px;
+
+            }
+
+
+            .pbdpc-error-card {
+
+                padding:
+
+                    42px 22px 35px;
+
+                border-radius: 6px;
+
+            }
+
+
+            .pbdpc-error-logo {
+
+                width: 70px;
+
+                height: 70px;
+
+            }
+
+
+            .pbdpc-error-code {
+
+                font-size:
+
+                    clamp(100px,
+                        30vw,
+                        145px);
+
+                letter-spacing: -3px;
+
+            }
+
+
+            .pbdpc-error-title {
+
+                margin-top: 25px;
+
+                font-size: 34px;
+
+            }
+
+
+            .pbdpc-error-message {
+
+                font-size: 14px;
+
+                line-height: 1.75;
+
+            }
+
+
+            .pbdpc-error-buttons {
+
+                flex-direction: column;
+
+                width: 100%;
+
+            }
+
+
+            .pbdpc-error-btn {
+
+                width: 100%;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           VERY SMALL DEVICES
+        ================================================== */
+
+        @media (max-width: 360px) {
+
+            .pbdpc-error-card {
+
+                padding:
+
+                    35px 18px 30px;
+
+            }
+
+
+            .pbdpc-error-code {
+
+                font-size: 105px;
+
+            }
+
+
+            .pbdpc-error-title {
+
+                font-size: 30px;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           ACCESSIBILITY
+        ================================================== */
+
+        .pbdpc-error-btn:focus-visible {
+
+            outline:
+
+                3px solid var(--error-gold);
+
+            outline-offset: 3px;
+
+        }
+
+
+        /* ==================================================
+           REDUCED MOTION
+        ================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .pbdpc-error-btn {
+
+                transition: none;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         404 CONTENT
+    ================================================== -->
+
+    <main class="pbdpc-error-page" aria-labelledby="error-title">
+
+        <div class="pbdpc-error-wrapper">
+
+
+            <div class="pbdpc-error-card">
+
+
+                <!-- ==================================================
+                     LOGO
+                ================================================== -->
+
+                <img src="assets/images/logo.png" alt="Protappur Baroari Durga Puja Committee" class="pbdpc-error-logo">
+
+
+                <!-- ==================================================
+                     LABEL
+                ================================================== -->
+
+                <div class="pbdpc-error-label" aria-hidden="true">
+
+                    PBDPC
+
+                </div>
+
+
+                <!-- ==================================================
+                     ERROR CODE
+                ================================================== -->
+
+                <h1 class="pbdpc-error-code">
+
+                    404
+
+                </h1>
+
+
+                <!-- ==================================================
+                     TITLE
+                ================================================== -->
+
+                <h2 id="error-title" class="pbdpc-error-title">
+
+                    Page Not Found
+
+                </h2>
+
+
+                <!-- ==================================================
+                     MESSAGE
+                ================================================== -->
+
+                <p class="pbdpc-error-message">
+
+                    The page you are looking for may have been
+                    moved, removed, renamed, or may no longer
+                    be available.
+
+                    Please return to the homepage or contact
+                    the committee if you need assistance.
+
+                </p>
+
+
+                <!-- ==================================================
+                     BUTTONS
+                ================================================== -->
+
+                <div class="pbdpc-error-buttons">
+
+
+                    <a href="/index.html" class="pbdpc-error-btn pbdpc-error-btn-primary">
+
+                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+
+                        Back to Home
+
+                    </a>
+
+
+                    <a href="/contact.html" class="pbdpc-error-btn pbdpc-error-btn-secondary">
+
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+
+                        Contact Us
+
+                    </a>
+
+
+                </div>
+
+
+                <!-- ==================================================
+                     DIVIDER
+                ================================================== -->
+
+                <div class="pbdpc-error-divider" aria-hidden="true"></div>
+
+
+                <!-- ==================================================
+                     BRAND
+                ================================================== -->
+
+                <p class="pbdpc-error-brand">
+
+                    <strong>
+                        Protappur Baroari Durga Puja Committee
+                    </strong>
+
+                    <br>
+
+                    Protappur, Hariharpara, Murshidabad, West Bengal
+
+                </p>
+
+
+                <p class="pbdpc-error-motto">
+
+                    Faith • Tradition • Heritage
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1720 @@
+/* ==========================================================
+   PBDPC — SITE FIXES
+   Additive stylesheet: fixes missing/mismatched CSS found
+   across the site. Loaded AFTER style.css / sponsors.css
+   on every page so these rules take effect.
+========================================================== */
+
+
+/* ==========================================================
+   1. BASE SECTION SPACING
+   (.section / .section-alt were used across gallery, committee,
+   donation, events, history, sponsors — with zero CSS defined)
+========================================================== */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-alt {
+    background: #faf8f4;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+}
+
+
+/* ==========================================================
+   2. HERO HIGHLIGHTS — GAP FIX
+========================================================== */
+
+.hero-highlights {
+    padding-bottom: 70px;
+}
+
+@media (max-width: 768px) {
+    .hero-highlights {
+        padding-bottom: 40px;
+    }
+}
+
+
+/* ==========================================================
+   3. GALLERY LIGHTBOX (POPUP)
+   Was completely unstyled — appeared as plain text at the
+   bottom of the page instead of a full-screen popup.
+========================================================== */
+
+.pbdpc-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(10, 5, 5, .92);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity .3s ease;
+}
+
+.pbdpc-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.pbdpc-lightbox .lightbox-image {
+    max-width: min(88vw, 1100px);
+    max-height: 86vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .5);
+}
+
+.pbdpc-lightbox button {
+    position: absolute;
+
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    transition: .25s;
+}
+
+.pbdpc-lightbox button:hover {
+    background: var(--secondary, #D4AF37);
+    color: #1a1a1a;
+}
+
+.pbdpc-lightbox .lightbox-close {
+    top: 24px;
+    right: 24px;
+
+    width: 46px;
+    height: 46px;
+
+    font-size: 26px;
+    line-height: 1;
+}
+
+.pbdpc-lightbox .lightbox-prev,
+.pbdpc-lightbox .lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 54px;
+    height: 54px;
+
+    font-size: 20px;
+}
+
+.pbdpc-lightbox .lightbox-prev {
+    left: 20px;
+}
+
+.pbdpc-lightbox .lightbox-next {
+    right: 20px;
+}
+
+@media (max-width: 640px) {
+
+    .pbdpc-lightbox .lightbox-prev,
+    .pbdpc-lightbox .lightbox-next {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .pbdpc-lightbox .lightbox-close {
+        top: 14px;
+        right: 14px;
+    }
+}
+
+
+/* ==========================================================
+   4. CTA SECTION BUTTON CONTRAST
+   Both buttons were nearly invisible against the dark-red
+   gradient background used by .cta-section.
+========================================================== */
+
+.cta-section .btn-primary {
+    background: #fff;
+    color: var(--primary);
+}
+
+.cta-section .btn-primary:hover {
+    background: var(--secondary);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.cta-section .btn-outline {
+    border-color: #fff;
+    color: #fff;
+}
+
+.cta-section .btn-outline:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+
+/* ==========================================================
+   5. GRID CENTERING — incomplete last rows were left stuck
+   to one side instead of being centered.
+========================================================== */
+
+.gallery-grid,
+.committee-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-grid .gallery-item,
+.gallery-grid > img {
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 14px);
+}
+
+.committee-grid .member-card {
+    flex: 1 1 240px;
+    max-width: calc(25% - 23px);
+}
+
+@media (max-width: 900px) {
+
+    .gallery-grid .gallery-item,
+    .gallery-grid > img {
+        max-width: calc(50% - 10px);
+    }
+
+    .committee-grid .member-card {
+        max-width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 560px) {
+
+    .gallery-grid .gallery-item,
+    .gallery-grid > img,
+    .committee-grid .member-card {
+        max-width: 100%;
+    }
+}
+
+
+/* ==========================================================
+   6. SPONSOR LOGO MARQUEE (home page)
+   Converts the static 4-logo grid into a slow, seamless
+   horizontal auto-scroll strip. Adding a new sponsor is as
+   simple as adding one more <div class="sponsor-card"> to
+   BOTH halves of the track in index.html.
+========================================================== */
+
+.sponsor-marquee {
+    overflow: hidden;
+    position: relative;
+
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.sponsor-track {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    width: max-content;
+
+    animation: pbdpc-sponsor-scroll 55s linear infinite;
+}
+
+.sponsor-marquee:hover .sponsor-track {
+    animation-play-state: paused;
+}
+
+.sponsor-track .sponsor-card {
+    flex: 0 0 auto;
+    width: 220px;
+}
+
+@keyframes pbdpc-sponsor-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 600px) {
+    .sponsor-track .sponsor-card {
+        width: 160px;
+        padding: 20px;
+        min-height: 130px;
+    }
+}
+
+
+/* ==========================================================
+   7. GALLERY.HTML — filter buttons
+========================================================== */
+
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+
+    border-radius: 30px;
+
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+
+/* ==========================================================
+   8. GALLERY.HTML — item / card / hover-overlay
+========================================================== */
+
+.gallery-item {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm, 0 8px 25px rgba(0,0,0,.08));
+    cursor: pointer;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 22px;
+
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, .82) 100%);
+
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    display: inline-block;
+
+    color: var(--secondary, #D4AF37);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+
+    margin-bottom: 6px;
+}
+
+.gallery-overlay h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.gallery-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: rgba(255, 255, 255, .15);
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 30px;
+
+    padding: 7px 16px;
+    font-size: 13px;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.gallery-view:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+
+/* ==========================================================
+   9. GALLERY.HTML — video gallery
+========================================================== */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 */
+
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm, 0 8px 25px rgba(0,0,0,.08));
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 800px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   10. COMMITTEE.HTML — executive member list
+========================================================== */
+
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.member-row {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+
+    padding: 16px 22px;
+
+    font-weight: 600;
+    color: var(--primary);
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    transition: .25s;
+}
+
+.member-row:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+}
+
+@media (max-width: 640px) {
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   11. COMMITTEE.HTML — volunteers
+========================================================== */
+
+.volunteer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.volunteer-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 24px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    border-left: 4px solid var(--secondary, #D4AF37);
+
+    transition: .25s;
+}
+
+.volunteer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+}
+
+.volunteer-card h3,
+.volunteer-card h4 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.volunteer-card p,
+.volunteer-card span {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .volunteer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .volunteer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   12. SHARED ICON-CARD (.history-info-card)
+   Used on committee.html "Our Values" and donation.html
+   "Where Your Donation Helps" sections inside .about-grid.
+========================================================== */
+
+.about-grid {
+    row-gap: 40px;
+}
+
+.history-info-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 26px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    transition: .25s;
+}
+
+.history-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+}
+
+.history-card-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(139, 0, 0, .08);
+    color: var(--primary);
+
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.history-info-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.history-info-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   13. HISTORY / COMMITTEE STATS STRIP
+========================================================== */
+
+.history-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    text-align: center;
+}
+
+.history-stat {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 15px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+}
+
+.history-stat strong {
+    display: block;
+
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    color: var(--primary);
+
+    margin-bottom: 8px;
+}
+
+.history-stat span {
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .history-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ==========================================================
+   14. CONTACT PAGE — layout + compact form
+========================================================== */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-form-section {
+    padding: 90px 0;
+}
+
+.contact-form {
+    padding: 34px;
+}
+
+.contact-form .section-title {
+    text-align: left;
+    margin-bottom: 26px;
+}
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 16px;
+}
+
+.contact-form .form-group:nth-child(5),
+.contact-form button[type="submit"] {
+    grid-column: 1 / -1;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    padding: 12px 14px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+.contact-form button[type="submit"] {
+    justify-self: start;
+    margin-top: 6px;
+
+    padding: 13px 32px;
+
+    background: var(--primary);
+    color: #fff;
+
+    border: none;
+    border-radius: 30px;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.contact-details .section-title {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.info-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-bottom: 20px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+}
+
+.info-box h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box li {
+    padding: 6px 0;
+    color: #555;
+    font-size: 14px;
+    border-bottom: 1px dashed #eee;
+}
+
+.info-box li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form .form-group:nth-child(5),
+    .contact-form button[type="submit"] {
+        grid-column: auto;
+    }
+}
+
+
+/* ==========================================================
+   15. SPONSORS.HTML — benefits grid
+========================================================== */
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.benefit-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 26px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    transition: .25s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+}
+
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(139, 0, 0, .08);
+    color: var(--primary);
+
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.benefit-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   16. SPONSORS.HTML — package pricing cards
+========================================================== */
+
+.sponsor-package-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.sponsor-package {
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px 26px;
+
+    border: 1px solid #eee;
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+
+    transition: .3s;
+}
+
+.sponsor-package:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg, 0 20px 40px rgba(0,0,0,.12));
+}
+
+.sponsor-package.featured {
+    border: 2px solid var(--secondary, #D4AF37);
+    position: relative;
+}
+
+.sponsor-package.featured::before {
+    content: "Most Popular";
+
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--secondary, #D4AF37);
+    color: #1a1a1a;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+
+    padding: 5px 16px;
+    border-radius: 20px;
+}
+
+.package-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.package-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(139, 0, 0, .08);
+    color: var(--primary);
+
+    font-size: 18px;
+}
+
+.package-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    color: #999;
+}
+
+.sponsor-package h3 {
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.package-price {
+    margin-bottom: 14px;
+}
+
+.package-price span {
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+
+.package-price strong {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    color: var(--primary);
+}
+
+.package-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.sponsor-package ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.sponsor-package ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    font-size: 13.5px;
+    color: #555;
+
+    padding: 7px 0;
+}
+
+.sponsor-package ul li i {
+    color: var(--secondary, #D4AF37);
+    margin-top: 3px;
+}
+
+.sponsor-package > a,
+.sponsor-package > .btn {
+    margin-top: auto;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .sponsor-package-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .sponsor-package-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   17. SPONSORS.HTML — souvenir / brochure / digital sections
+========================================================== */
+
+.souvenir-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+
+    border-radius: 24px;
+    padding: 50px 55px;
+}
+
+.souvenir-box h2,
+.souvenir-box h2 span {
+    color: #fff;
+}
+
+.souvenir-box p {
+    color: rgba(255, 255, 255, .85);
+}
+
+.souvenir-box .section-subtitle {
+    color: var(--secondary, #D4AF37);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .5px;
+}
+
+.souvenir-icon {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+
+    font-size: 42px;
+    color: var(--secondary, #D4AF37);
+}
+
+.souvenir-box .btn-primary {
+    background: #fff;
+    color: var(--primary);
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.souvenir-box .btn-primary:hover {
+    background: var(--secondary, #D4AF37);
+    color: #1a1a1a;
+}
+
+.brochure-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 34px 38px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+}
+
+.brochure-icon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(139, 0, 0, .08);
+    color: var(--primary);
+
+    font-size: 26px;
+}
+
+.brochure-content {
+    flex: 1 1 300px;
+}
+
+.brochure-content h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.brochure-content p {
+    color: #666;
+    font-size: 14.5px;
+}
+
+.brochure-action .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.digital-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.digital-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg, 0 20px 40px rgba(0,0,0,.12));
+}
+
+.digital-content .section-subtitle {
+    color: var(--secondary, #D4AF37);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.digital-content h2 span {
+    color: var(--primary);
+}
+
+.digital-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.digital-content ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 0;
+    color: #555;
+    font-size: 15px;
+}
+
+.digital-content ul li i {
+    color: var(--secondary, #D4AF37);
+}
+
+@media (max-width: 900px) {
+
+    .souvenir-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .souvenir-icon {
+        margin: 0 auto;
+    }
+
+    .digital-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   18. SPONSORS.HTML — process steps
+========================================================== */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.process-card {
+    position: relative;
+
+    background: #fff;
+    border-radius: 16px;
+    padding: 34px 24px 26px;
+    text-align: center;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+}
+
+.process-number {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.process-card i {
+    font-size: 30px;
+    color: var(--secondary, #D4AF37);
+    margin: 14px 0;
+}
+
+.process-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.process-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================
+   19. SPONSORS.HTML — misc small components
+========================================================== */
+
+.section-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, .15);
+    color: var(--secondary, #D4AF37);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--secondary, #D4AF37);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-heading.center {
+    text-align: center;
+}
+
+.sponsor-highlight {
+    background: #faf5e8;
+    border-left: 4px solid var(--secondary, #D4AF37);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.sponsor-note {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+
+    background: #fff8ec;
+    border: 1px solid #f0e0b8;
+    border-radius: 16px;
+    padding: 28px 32px;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sponsor-note i {
+    font-size: 26px;
+    color: var(--secondary, #D4AF37);
+    margin-top: 4px;
+}
+
+.sponsor-note h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.sponsor-note p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.social-sponsor-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.social-sponsor-links a {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+
+    transition: .25s;
+}
+
+.social-sponsor-links a:hover {
+    background: var(--secondary, #D4AF37);
+    color: #1a1a1a;
+}
+
+.sponsor-enquiry-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 26px;
+}
+
+
+/* ==========================================================
+   20. BARE .btn (no modifier) — was invisible everywhere
+   (no background/color set), which made hero-buttons /
+   cta-section buttons blend into dark backgrounds.
+========================================================== */
+
+.btn {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.page-hero .btn,
+.cta-section .btn {
+    background: #fff;
+    color: var(--primary);
+}
+
+.page-hero .btn:hover,
+.cta-section .btn:hover {
+    background: var(--secondary, #D4AF37);
+    color: #fff;
+}
+
+
+/* ==========================================================
+   21. HERO-BUTTONS — centering inside hero / CTA sections only
+   (other in-page usages keep their natural left alignment)
+========================================================== */
+
+.page-hero .hero-buttons,
+.cta-section .hero-buttons {
+    justify-content: center;
+}
+
+
+/* ==========================================================
+   22. CONTACT PAGE — form on the right, details on the left
+========================================================== */
+
+.contact-wrapper .contact-form {
+    order: 2;
+}
+
+.contact-wrapper .contact-details {
+    order: 1;
+}
+
+
+/* ==========================================================
+   23. CONTACT PAGE — top info cards (.contact-grid /
+   .contact-card) had zero CSS, so content hugged the left
+   edge with no card styling at all.
+========================================================== */
+
+.contact-grid {
+    margin-top: 10px;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 28px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    transition: .25s;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+}
+
+.contact-card h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-card p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.contact-card > a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--secondary, #D4AF37);
+}
+
+
+/* ==========================================================
+   24. CONTACT PAGE — social cards + FAQ (zero CSS previously)
+========================================================== */
+
+.social-connect {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 90px 0;
+    text-align: center;
+}
+
+.social-connect .section-title h2,
+.social-connect .section-title p {
+    color: #fff;
+}
+
+.social-connect .section-title span {
+    color: var(--secondary, #D4AF37);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.social-card {
+    display: block;
+
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 16px;
+    padding: 28px 22px;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.social-card:hover {
+    background: #fff;
+    transform: translateY(-6px);
+}
+
+.social-card h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: .3s;
+}
+
+.social-card:hover h3 {
+    color: var(--primary);
+}
+
+.social-card p {
+    color: rgba(255, 255, 255, .75);
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: .3s;
+}
+
+.social-card:hover p {
+    color: #555;
+}
+
+.social-card span {
+    color: var(--secondary, #D4AF37);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 22px 26px;
+
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.04));
+}
+
+.faq-item h3 {
+    font-size: 16.5px;
+    color: var(--primary);
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-item p {
+    color: #666;
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   25. GALLERY.HTML / TEMPLE.HTML — static #galleryLightbox
+   popup (had zero CSS, showed as plain "X<>" text at bottom)
+========================================================== */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(10, 5, 5, .92);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity .3s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.gallery-lightbox .lightbox-content {
+    max-width: min(88vw, 1100px);
+    max-height: 86vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-lightbox .lightbox-content img {
+    max-width: 100%;
+    max-height: 78vh;
+
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .5);
+}
+
+.gallery-lightbox .lightbox-caption {
+    color: #fff;
+    text-align: center;
+    margin-top: 16px;
+    font-size: 15px;
+}
+
+.gallery-lightbox button {
+    position: absolute;
+
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    transition: .25s;
+}
+
+.gallery-lightbox button:hover {
+    background: var(--secondary, #D4AF37);
+    color: #1a1a1a;
+}
+
+.gallery-lightbox .lightbox-close {
+    top: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+}
+
+.gallery-lightbox .lightbox-prev,
+.gallery-lightbox .lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    font-size: 18px;
+}
+
+.gallery-lightbox .lightbox-prev {
+    left: 20px;
+}
+
+.gallery-lightbox .lightbox-next {
+    right: 20px;
+}
+
+@media (max-width: 640px) {
+
+    .gallery-lightbox .lightbox-prev,
+    .gallery-lightbox .lightbox-next {
+        width: 42px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .gallery-lightbox .lightbox-close {
+        top: 14px;
+        right: 14px;
+    }
+}
+
+
+/* ==========================================================
+   26. GALLERY.HTML — "Load More Photos" button + video button
+========================================================== */
+
+.load-more {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.load-more .btn {
+    background: var(--primary);
+    color: #fff;
+}
+
+.load-more .btn[disabled] {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.center.gallery-video-button {
+    text-align: center;
+    margin-top: 40px;
+}

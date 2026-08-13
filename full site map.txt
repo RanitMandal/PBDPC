@@ -1,0 +1,1098 @@
+অবশ্যই। এখন যেহেতু আমরা **PBDPC website-টা পুরোপুরি organize করে final structure-এ নিতে চাই**, আমি এমন structure দিচ্ছি যাতে ভবিষ্যতে নতুন page, event, sponsor, gallery, video, SEO, PWA—সব সহজে যোগ করা যায়।
+
+# 🏛️ PBDPC — Complete Project Structure
+
+```text
+PBDPC/
+│
+├── index.html
+├── about.html
+├── history.html
+├── temple.html
+├── gallery.html
+├── committee.html
+├── events.html
+├── sponsors.html
+├── donation.html
+├── contact.html
+├── privacy.html
+├── terms.html
+├── 404.html
+│
+├── manifest.json
+├── service-worker.js
+├── robots.txt
+├── sitemap.xml
+│
+├── components/
+│   ├── header.html
+│   └── footer.html
+│
+├── assets/
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── components.js
+│   │   └── config.js
+│   │
+│   ├── images/
+│   │   │
+│   │   ├── logo/
+│   │   │   ├── logo.png
+│   │   │   ├── logo-white.png
+│   │   │   └── logo-mark.png
+│   │   │
+│   │   ├── home/
+│   │   │   ├── hero1.jpg
+│   │   │   ├── hero2.jpg
+│   │   │   ├── hero3.jpg
+│   │   │   ├── feature-temple.jpg
+│   │   │   ├── feature-history.jpg
+│   │   │   ├── feature-community.jpg
+│   │   │   └── feature-events.jpg
+│   │   │
+│   │   ├── about/
+│   │   │   ├── about-main.jpg
+│   │   │   ├── committee.jpg
+│   │   │   └── community.jpg
+│   │   │
+│   │   ├── history/
+│   │   │   ├── old-temple.jpg
+│   │   │   ├── history-01.jpg
+│   │   │   ├── history-02.jpg
+│   │   │   ├── history-03.jpg
+│   │   │   └── history-04.jpg
+│   │   │
+│   │   ├── temple/
+│   │   │   ├── temple-main.jpg
+│   │   │   ├── temple-front.jpg
+│   │   │   ├── temple-interior.jpg
+│   │   │   ├── maa-durga.jpg
+│   │   │   └── temple-detail.jpg
+│   │   │
+│   │   ├── gallery/
+│   │   │   ├── durga-puja/
+│   │   │   ├── cultural/
+│   │   │   ├── immersion/
+│   │   │   ├── community/
+│   │   │   └── old-memories/
+│   │   │
+│   │   ├── committee/
+│   │   │   ├── committee-group.jpg
+│   │   │   ├── president.jpg
+│   │   │   ├── secretary.jpg
+│   │   │   ├── treasurer.jpg
+│   │   │   └── members/
+│   │   │       ├── member-01.jpg
+│   │   │       ├── member-02.jpg
+│   │   │       └── member-03.jpg
+│   │   │
+│   │   ├── events/
+│   │   │   ├── durga-puja.jpg
+│   │   │   ├── lakshmi-puja.jpg
+│   │   │   ├── kali-puja.jpg
+│   │   │   ├── ram-navami.jpg
+│   │   │   └── other-events.jpg
+│   │   │
+│   │   ├── sponsors/
+│   │   │   ├── current/
+│   │   │   │   ├── sponsor-01.png
+│   │   │   │   └── sponsor-02.png
+│   │   │   │
+│   │   │   ├── previous/
+│   │   │   │   ├── 2025-sponsor-01.png
+│   │   │   │   └── 2025-sponsor-02.png
+│   │   │   │
+│   │   │   ├── upcoming/
+│   │   │   │   └── sponsor-placeholder.png
+│   │   │   │
+│   │   │   ├── ads/
+│   │   │   │   ├── ad-01.jpg
+│   │   │   │   └── ad-02.jpg
+│   │   │   │
+│   │   │   └── social/
+│   │   │       ├── social-01.jpg
+│   │   │       └── social-02.jpg
+│   │   │
+│   │   ├── donation/
+│   │   │   ├── donation-banner.jpg
+│   │   │   └── qr-code.png
+│   │   │
+│   │   ├── contact/
+│   │   │   └── contact.jpg
+│   │   │
+│   │   └── 404/
+│   │       └── 404.png
+│   │
+│   ├── videos/
+│   │   ├── home/
+│   │   ├── gallery/
+│   │   ├── sponsors/
+│   │   └── events/
+│   │
+│   ├── icons/
+│   │   ├── favicon.ico
+│   │   ├── favicon.png
+│   │   ├── apple-touch-icon.png
+│   │   ├── icon-192.png
+│   │   └── icon-512.png
+│   │
+│   └── documents/
+│       ├── sponsorship-brochure.pdf
+│       ├── donation-guidelines.pdf
+│       └── committee-document.pdf
+│
+└── README.md
+```
+
+---
+
+# 1. Root HTML Files
+
+এগুলো হলো website-এর মূল pages।
+
+---
+
+## `index.html`
+
+```text
+PBDPC/index.html
+```
+
+### কেন?
+
+এটা website-এর **homepage**।
+
+এখানে থাকবে:
+
+* Hero
+* Temple introduction
+* PBDPC introduction
+* Established 1948
+* Important highlights
+* Upcoming events
+* Sponsor highlights
+* Gallery preview
+* Donation CTA
+* Footer
+
+Website খুললে এটিই প্রথম page।
+
+---
+
+# `about.html`
+
+```text
+PBDPC/about.html
+```
+
+### কেন?
+
+PBDPC সম্পর্কে বিস্তারিত পরিচয় দেওয়ার জন্য।
+
+এখানে থাকবে:
+
+* Who we are
+* Our mission
+* Our vision
+* Community service
+* Cultural activities
+* Temple/community contribution
+
+---
+
+# `history.html`
+
+```text
+PBDPC/history.html
+```
+
+### কেন?
+
+PBDPC-এর **1948 থেকে বর্তমান পর্যন্ত ইতিহাস** দেখানোর জন্য।
+
+এখানে timeline করা যাবে:
+
+```text
+1948
+ ↓
+Foundation
+ ↓
+Early Years
+ ↓
+Growth
+ ↓
+Major Developments
+ ↓
+Present Day
+```
+
+পুরনো ছবি এখানে ব্যবহার হবে।
+
+---
+
+# `temple.html`
+
+```text
+PBDPC/temple.html
+```
+
+### কেন?
+
+মন্দির সম্পর্কে dedicated information দেওয়ার জন্য।
+
+এখানে থাকবে:
+
+* Temple history
+* Architecture
+* Maa Durga
+* Temple gallery
+* Visiting information
+* Location
+* Religious significance
+
+---
+
+# `gallery.html`
+
+```text
+PBDPC/gallery.html
+```
+
+### কেন?
+
+সব photo/video এক জায়গায় রাখার জন্য।
+
+Category:
+
+* Durga Puja
+* Cultural Program
+* Immersion
+* Community Service
+* Old Memories
+
+Future-এ এখানে filter system থাকবে।
+
+যেমন:
+
+```text
+[All]
+[Durga Puja]
+[Cultural]
+[Immersion]
+[Community]
+[Old Memories]
+```
+
+---
+
+# `committee.html`
+
+```text
+PBDPC/committee.html
+```
+
+### কেন?
+
+Committee members-এর information দেওয়ার জন্য।
+
+যেমন:
+
+* President
+* Secretary
+* Treasurer
+* Executive Members
+* Other Members
+
+প্রত্যেকের:
+
+* Photo
+* Name
+* Designation
+* Short description
+
+থাকতে পারে।
+
+---
+
+# `events.html`
+
+```text
+PBDPC/events.html
+```
+
+### কেন?
+
+সারা বছরের অনুষ্ঠান এবং Puja schedule দেখানোর জন্য।
+
+যেমন:
+
+```text
+Durga Puja
+Lakshmi Puja
+Kali Puja
+Ram Navami
+Cultural Program
+Community Events
+```
+
+Future-এ event calendar-ও যোগ করা যাবে।
+
+---
+
+# `sponsors.html`
+
+```text
+PBDPC/sponsors.html
+```
+
+এটা আমাদের website-এর **commercial/partnership section**।
+
+### এখানে থাকবে:
+
+### Current Sponsors
+
+বর্তমান sponsor।
+
+### Previous Sponsors
+
+আগের বছরের sponsor history।
+
+### Upcoming Sponsors
+
+যারা upcoming event-এর sponsor।
+
+### Sponsor Advertisement
+
+Paid:
+
+* Banner
+* Image
+* Video
+* Social media promotion
+
+### Sponsor CTA
+
+```text
+Become a Sponsor
+```
+
+এখান থেকে sponsor enquiry/form-এ যাওয়া যাবে।
+
+---
+
+# `donation.html`
+
+```text
+PBDPC/donation.html
+```
+
+### কেন?
+
+Donation গ্রহণের জন্য।
+
+এখানে থাকবে:
+
+* Why donate
+* Donation options
+* UPI
+* Bank details
+* QR code
+* Donation instructions
+* Contact
+
+---
+
+# `contact.html`
+
+```text
+PBDPC/contact.html
+```
+
+### কেন?
+
+Visitors যেন সহজে যোগাযোগ করতে পারে।
+
+থাকবে:
+
+* Address
+* Phone
+* Email
+* Google Maps
+* Contact form
+* Social media
+
+---
+
+# `privacy.html`
+
+Privacy policy।
+
+যদি website-এ:
+
+* Contact form
+* Sponsor form
+* Donation form
+* Analytics
+* Cookies
+
+ব্যবহার করি, তাহলে এটা দরকার।
+
+---
+
+# `terms.html`
+
+Website-এর Terms & Conditions।
+
+বিশেষ করে sponsor/advertisement/donation section থাকায় useful।
+
+---
+
+# `404.html`
+
+কোনো ভুল URL হলে এই page দেখাবে।
+
+উদাহরণ:
+
+```text
+https://ranitmandal.github.io/PBDPC/abc.html
+```
+
+তখন:
+
+```text
+404
+Page Not Found
+```
+
+দেখাবে।
+
+---
+
+# 2. `components/`
+
+```text
+components/
+├── header.html
+└── footer.html
+```
+
+এটা খুব গুরুত্বপূর্ণ।
+
+## `header.html`
+
+এক জায়গায় রাখব:
+
+* Logo
+* Navigation
+* Mobile menu
+* Social links
+* Header buttons
+
+তারপর সব page-এ:
+
+```html
+<div id="header"></div>
+```
+
+দিয়ে dynamically load হবে।
+
+### সুবিধা
+
+Header পরিবর্তন করতে হলে 12টা HTML file edit করতে হবে না।
+
+শুধু:
+
+```text
+components/header.html
+```
+
+edit করলেই হবে।
+
+---
+
+## `footer.html`
+
+একইভাবে:
+
+* Logo
+* Quick Links
+* Festivals
+* Contact
+* Social Media
+* Copyright
+* Privacy
+* Terms
+* Sitemap
+* Developer credit
+
+সব এক জায়গায় থাকবে।
+
+---
+
+# 3. `assets/css/`
+
+```text
+assets/css/style.css
+```
+
+### কেন?
+
+Website-এর সমস্ত design এখানে।
+
+যেমন:
+
+* Colors
+* Typography
+* Header
+* Hero
+* Buttons
+* Cards
+* Gallery
+* Footer
+* Responsive design
+* Mobile design
+* Animation
+
+### কেন একটাই CSS?
+
+আমাদের project এখন vanilla HTML/CSS/JS। তাই একটা central stylesheet maintain করা সহজ।
+
+---
+
+# 4. `assets/js/`
+
+এখানে তিনটি গুরুত্বপূর্ণ JS file:
+
+```text
+assets/js/
+├── app.js
+├── components.js
+└── config.js
+```
+
+---
+
+## `components.js`
+
+এটা মূলত **Header/Footer loader**।
+
+যেমন:
+
+```javascript
+loadComponent("header", "components/header.html");
+loadComponent("footer", "components/footer.html");
+```
+
+এছাড়াও:
+
+* Active menu
+* Dynamic year
+* Component error handling
+
+রাখতে পারি।
+
+---
+
+# `app.js`
+
+এটা website-এর interactive functionality।
+
+যেমন:
+
+* Mobile menu
+* Gallery lightbox
+* Slider
+* FAQ
+* Back to top
+* Scroll animation
+* Form validation
+* Video controls
+
+---
+
+# `config.js`
+
+এখানে central configuration রাখব।
+
+যেমন:
+
+```javascript
+SITE_NAME
+SITE_URL
+EMAIL
+PHONE
+FACEBOOK_URL
+YOUTUBE_URL
+INSTAGRAM_URL
+MAP_URL
+```
+
+### সুবিধা
+
+Contact information বদলালে সব HTML file-এ search/replace করতে হবে না।
+
+---
+
+# 5. `assets/images/`
+
+এটা website-এর সবচেয়ে বড় asset folder।
+
+আমরা page-wise images আলাদা রাখছি।
+
+এতে project maintain করা সহজ হয়।
+
+---
+
+# `images/logo/`
+
+```text
+logo/
+├── logo.png
+├── logo-white.png
+└── logo-mark.png
+```
+
+### কেন ৩টি?
+
+### `logo.png`
+
+Normal header/footer।
+
+### `logo-white.png`
+
+Dark background/footer-এর জন্য।
+
+### `logo-mark.png`
+
+শুধু icon/round logo যেখানে দরকার।
+
+---
+
+# `images/home/`
+
+Homepage-specific images।
+
+```text
+home/
+├── hero1.jpg
+├── hero2.jpg
+├── hero3.jpg
+├── feature-temple.jpg
+├── feature-history.jpg
+├── feature-community.jpg
+└── feature-events.jpg
+```
+
+### Hero
+
+Large landscape image।
+
+Recommended:
+
+```text
+1920 × 1080
+```
+
+---
+
+# `images/about/`
+
+About page-এর images।
+
+Community, committee, temple এবং social activities-এর ছবি।
+
+---
+
+# `images/history/`
+
+পুরনো ছবি।
+
+এখানে historical photographs রাখব।
+
+Low-resolution old photographs থাকলেও চলবে।
+
+---
+
+# `images/temple/`
+
+শুধু temple-related images।
+
+যেমন:
+
+```text
+temple-front.jpg
+maa-durga.jpg
+temple-interior.jpg
+```
+
+---
+
+# `images/gallery/`
+
+Gallery-এর জন্য আলাদা category।
+
+```text
+gallery/
+├── durga-puja/
+├── cultural/
+├── immersion/
+├── community/
+└── old-memories/
+```
+
+### কেন subfolder?
+
+কারণ gallery বড় হবে।
+
+একদিন 500+ photo হলেও manage করা সহজ হবে।
+
+---
+
+# `images/committee/`
+
+Committee member photos।
+
+```text
+committee/
+├── committee-group.jpg
+├── president.jpg
+├── secretary.jpg
+├── treasurer.jpg
+└── members/
+```
+
+---
+
+# `images/events/`
+
+Event cards/banner-এর images।
+
+---
+
+# `images/sponsors/`
+
+এটা বিশেষভাবে organized:
+
+```text
+sponsors/
+├── current/
+├── previous/
+├── upcoming/
+├── ads/
+└── social/
+```
+
+### `current/`
+
+Current sponsor logo।
+
+### `previous/`
+
+Sponsor history।
+
+### `upcoming/`
+
+Upcoming sponsor/announcement।
+
+### `ads/`
+
+Paid advertising।
+
+### `social/`
+
+Sponsor social promotional content।
+
+---
+
+# `images/donation/`
+
+Donation page:
+
+```text
+donation-banner.jpg
+qr-code.png
+```
+
+---
+
+# `images/contact/`
+
+Contact page-এর optional image।
+
+---
+
+# `images/404/`
+
+404 page-এর optional illustration।
+
+---
+
+# 6. `assets/videos/`
+
+Video assets:
+
+```text
+videos/
+├── home/
+├── gallery/
+├── sponsors/
+└── events/
+```
+
+### কেন আলাদা?
+
+Video অনেক বড় file।
+
+Images-এর সঙ্গে mix করলে asset management খারাপ হয়।
+
+---
+
+# 7. `assets/icons/`
+
+Website/PWA icons।
+
+```text
+icons/
+├── favicon.ico
+├── favicon.png
+├── apple-touch-icon.png
+├── icon-192.png
+└── icon-512.png
+```
+
+### কেন?
+
+Browser tab:
+
+```text
+favicon
+```
+
+Mobile shortcut:
+
+```text
+apple-touch-icon
+```
+
+PWA:
+
+```text
+icon-192
+icon-512
+```
+
+---
+
+# 8. `assets/documents/`
+
+Future documents রাখার জন্য:
+
+```text
+documents/
+├── sponsorship-brochure.pdf
+├── donation-guidelines.pdf
+└── committee-document.pdf
+```
+
+### কেন?
+
+Website-এ PDF download দিতে পারব।
+
+যেমন:
+
+> Download Sponsorship Brochure
+
+---
+
+# 9. `manifest.json`
+
+PWA configuration।
+
+এর মাধ্যমে website installable হতে পারে।
+
+যেমন mobile-এ:
+
+> Add to Home Screen
+
+করলে PBDPC app-এর মতো open হতে পারবে।
+
+---
+
+# 10. `service-worker.js`
+
+PWA-এর background service worker।
+
+এটা ব্যবহার করে:
+
+* Offline caching
+* Faster loading
+* Cached assets
+* Basic offline support
+
+দেওয়া যায়।
+
+---
+
+# 11. `robots.txt`
+
+Search engine crawler-এর জন্য।
+
+Google/Bing-কে জানায় কোন pages crawl করা যাবে।
+
+---
+
+# 12. `sitemap.xml`
+
+Search engines-এর জন্য website-এর page list।
+
+যেমন:
+
+```text
+/
+ /about.html
+ /history.html
+ /temple.html
+ /gallery.html
+ /committee.html
+ /events.html
+ /sponsors.html
+ /donation.html
+ /contact.html
+```
+
+SEO-এর জন্য useful।
+
+---
+
+# 13. `README.md`
+
+Developer documentation।
+
+এখানে থাকবে:
+
+```text
+Project Name
+Website URL
+Folder Structure
+How to run locally
+How to add images
+How to add sponsors
+How to add gallery
+How to update contact information
+How to deploy
+```
+
+Future-এ অন্য developer project নিলেও বুঝতে পারবে।
+
+---
+
+# 🔥 পুরো Architecture এক নজরে
+
+```text
+                    PBDPC WEBSITE
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+      HTML             CSS               JS
+        │                │                │
+        │                │                ├── app.js
+        │                │                ├── components.js
+        │                │                └── config.js
+        │                │
+        │                └── style.css
+        │
+        ├── index.html
+        ├── about.html
+        ├── history.html
+        ├── temple.html
+        ├── gallery.html
+        ├── committee.html
+        ├── events.html
+        ├── sponsors.html
+        ├── donation.html
+        ├── contact.html
+        ├── privacy.html
+        ├── terms.html
+        └── 404.html
+        │
+        ▼
+    COMPONENTS
+        │
+        ├── header.html
+        └── footer.html
+        │
+        ▼
+      ASSETS
+        │
+        ├── CSS
+        ├── JS
+        ├── Images
+        ├── Videos
+        ├── Icons
+        └── Documents
+        │
+        ▼
+   SEO + PWA
+        │
+        ├── robots.txt
+        ├── sitemap.xml
+        ├── manifest.json
+        └── service-worker.js
+```
+
+---
+
+# কেন এই Structure ব্যবহার করছি?
+
+মূল কারণ হলো **future-proofing**।
+
+আপনার website এখন শুধু একটা Puja information website নয়। আমরা এটাকে ধীরে ধীরে:
+
+**Temple + Heritage + Community + Events + Gallery + Sponsor + Advertisement + Donation + PWA**
+
+platform হিসেবে তৈরি করছি।
+
+তাই শুরু থেকেই separation রাখলে ভবিষ্যতে:
+
+```text
+2025 Gallery
+2026 Gallery
+2027 Gallery
+```
+
+বা:
+
+```text
+2025 Sponsors
+2026 Sponsors
+2027 Sponsors
+```
+
+সহজে যোগ করা যাবে।
+
+---
+
+## আমার Recommendation
+
+এখন থেকে আমরা **একসাথে সব file edit না করে এই order-এ final করব**:
+
+**Step 1:** Folder structure তৈরি
+**Step 2:** `config.js` final
+**Step 3:** `components.js` final
+**Step 4:** `header.html` final
+**Step 5:** `footer.html` final
+**Step 6:** `style.css` final/common system
+**Step 7:** `index.html` final
+**Step 8:** About → History → Temple
+**Step 9:** Gallery → Committee → Events
+**Step 10:** Sponsors → Donation → Contact
+**Step 11:** Privacy → Terms → 404
+**Step 12:** SEO + PWA
+**Step 13:** পুরো website-এর link/path/error check
+**Step 14:** GitHub Pages final deployment
+
+এভাবে করলে আবার আগের মতো **header/footer, image path, `Cannot GET`, broken image, CSS overlap** ধরনের সমস্যা কম হবে।

@@ -1,0 +1,1351 @@
+/* =========================================================
+   PBDPC SPONSORS PAGE
+   Sponsorship / Partnership Page
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE VARIABLES
+   ========================================================= */
+
+:root {
+    --sponsor-red: #a90000;
+    --sponsor-red-dark: #780000;
+    --sponsor-gold: #d9ad24;
+    --sponsor-gold-light: #f2d36b;
+
+    --sponsor-dark: #111111;
+    --sponsor-dark-2: #181818;
+
+    --sponsor-white: #ffffff;
+    --sponsor-light: #f8f6f0;
+    --sponsor-border: rgba(169, 0, 0, 0.14);
+
+    --sponsor-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10);
+
+    --sponsor-radius: 18px;
+
+    --container-width: 1280px;
+}
+
+
+/* =========================================================
+   GLOBAL SPONSOR PAGE
+   ========================================================= */
+
+.sponsors-page {
+    background: var(--sponsor-white);
+    color: #222;
+    overflow-x: hidden;
+}
+
+.sponsors-page *,
+.sponsors-page *::before,
+.sponsors-page *::after {
+    box-sizing: border-box;
+}
+
+.sponsors-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sponsors-page a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+   ========================================================= */
+
+.sponsors-page .container {
+    width: min(
+        calc(100% - 40px),
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   SECTION COMMON
+   ========================================================= */
+
+.sponsor-section {
+    padding: 90px 0;
+}
+
+.sponsor-section-light {
+    background: var(--sponsor-light);
+}
+
+.sponsor-section-white {
+    background: #ffffff;
+}
+
+.sponsor-section-dark {
+    background: var(--sponsor-dark);
+    color: #ffffff;
+}
+
+.sponsor-section-heading {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.sponsor-section-heading .eyebrow {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--sponsor-red);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sponsor-section-heading h2 {
+    margin: 0 0 18px;
+
+    color: var(--sponsor-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.sponsor-section-dark .sponsor-section-heading h2 {
+    color: #ffffff;
+}
+
+.sponsor-section-heading p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.sponsor-section-dark .sponsor-section-heading p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.sponsor-hero {
+    position: relative;
+
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.84) 0%,
+            rgba(0, 0, 0, 0.66) 42%,
+            rgba(0, 0, 0, 0.25) 100%
+        ),
+        url("../images/sponsors/sponsor-banner.jpg")
+        center center / cover no-repeat;
+
+    color: #ffffff;
+}
+
+.sponsor-hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 5px;
+
+    background: var(--sponsor-gold);
+}
+
+.sponsor-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding: 90px 0;
+}
+
+.sponsor-hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+    padding: 9px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: var(--sponsor-gold-light);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.sponsor-hero h1 {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 0.98;
+    font-weight: 700;
+}
+
+.sponsor-hero h1 span {
+    color: var(--sponsor-gold);
+}
+
+.sponsor-hero p {
+    max-width: 720px;
+
+    margin: 0 0 32px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.sponsor-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.sponsor-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 28px;
+
+    border-radius: 999px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.sponsor-btn:hover {
+    transform: translateY(-3px);
+}
+
+.sponsor-btn-primary {
+    background: var(--sponsor-red);
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 25px rgba(169, 0, 0, 0.25);
+}
+
+.sponsor-btn-primary:hover {
+    background: var(--sponsor-red-dark);
+}
+
+.sponsor-btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    background: transparent;
+
+    color: #ffffff;
+}
+
+.sponsor-btn-outline:hover {
+    background: #ffffff;
+    color: var(--sponsor-red);
+}
+
+.sponsor-btn-gold {
+    background: var(--sponsor-gold);
+    color: #111111;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.sponsor-intro {
+    padding: 90px 0;
+}
+
+.sponsor-intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.sponsor-intro-image {
+    overflow: hidden;
+
+    border-radius: var(--sponsor-radius);
+
+    box-shadow: var(--sponsor-shadow);
+}
+
+.sponsor-intro-image img {
+    width: 100%;
+    min-height: 440px;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.sponsor-intro-image:hover img {
+    transform: scale(1.04);
+}
+
+.sponsor-intro-content .eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--sponsor-red);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sponsor-intro-content h2 {
+    margin: 0 0 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.1;
+}
+
+.sponsor-intro-content p {
+    margin: 0 0 18px;
+
+    color: #555;
+
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.sponsor-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.sponsor-benefit {
+    padding: 30px;
+
+    border: 1px solid var(--sponsor-border);
+    border-radius: var(--sponsor-radius);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.sponsor-benefit:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(217, 173, 36, 0.55);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+.sponsor-benefit-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    background: rgba(217, 173, 36, 0.14);
+
+    color: var(--sponsor-gold);
+
+    font-size: 25px;
+}
+
+.sponsor-benefit h3 {
+    margin: 0 0 10px;
+
+    font-size: 21px;
+}
+
+.sponsor-benefit p {
+    margin: 0;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPONSORSHIP PACKAGES
+   ========================================================= */
+
+.sponsor-packages {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+.sponsor-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 520px;
+
+    padding: 34px 28px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.07);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.13);
+}
+
+.sponsor-card.featured {
+    border: 2px solid var(--sponsor-gold);
+
+    box-shadow:
+        0 18px 45px rgba(217, 173, 36, 0.18);
+}
+
+.sponsor-card-badge {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: var(--sponsor-gold);
+
+    color: #111;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.sponsor-card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: rgba(169, 0, 0, 0.08);
+
+    color: var(--sponsor-red);
+
+    font-size: 24px;
+}
+
+.sponsor-card h3 {
+    margin: 0 0 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+}
+
+.sponsor-price {
+    margin-bottom: 22px;
+
+    color: var(--sponsor-red);
+
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.sponsor-card ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin: 0 0 28px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.sponsor-card li {
+    position: relative;
+
+    padding-left: 25px;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.sponsor-card li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    color: var(--sponsor-gold);
+
+    font-weight: 900;
+}
+
+.sponsor-card .sponsor-btn {
+    width: 100%;
+
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   BRANDING OPTIONS
+   ========================================================= */
+
+.branding-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+.branding-card {
+    overflow: hidden;
+
+    border-radius: var(--sponsor-radius);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.branding-card-image {
+    height: 270px;
+
+    overflow: hidden;
+}
+
+.branding-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.branding-card:hover .branding-card-image img {
+    transform: scale(1.05);
+}
+
+.branding-card-content {
+    padding: 28px;
+}
+
+.branding-card-content h3 {
+    margin: 0 0 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 26px;
+}
+
+.branding-card-content p {
+    margin: 0 0 15px;
+
+    color: #666;
+
+    line-height: 1.75;
+}
+
+.branding-card-content ul {
+    margin: 0;
+    padding-left: 20px;
+
+    color: #555;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SOUVENIR ADVERTISEMENT
+   ========================================================= */
+
+.souvenir-section {
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #242424
+        );
+
+    color: #ffffff;
+}
+
+.souvenir-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.souvenir-image {
+    overflow: hidden;
+
+    border-radius: var(--sponsor-radius);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.souvenir-image img {
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+}
+
+.souvenir-content .eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--sponsor-gold);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.souvenir-content h2 {
+    margin: 0 0 18px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+}
+
+.souvenir-content p {
+    color: rgba(255, 255, 255, 0.76);
+
+    line-height: 1.8;
+}
+
+.souvenir-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin: 25px 0 30px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.souvenir-list li {
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: rgba(255, 255, 255, 0.86);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   DIGITAL / SOCIAL MEDIA PROMOTION
+   ========================================================= */
+
+.digital-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.digital-card {
+    padding: 32px;
+
+    border-radius: var(--sponsor-radius);
+
+    background: #ffffff;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.06);
+
+    text-align: center;
+}
+
+.digital-card-icon {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: rgba(217, 173, 36, 0.15);
+
+    color: var(--sponsor-gold);
+
+    font-size: 28px;
+}
+
+.digital-card h3 {
+    margin: 0 0 10px;
+
+    font-size: 21px;
+}
+
+.digital-card p {
+    margin: 0;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SPONSORSHIP PROCESS
+   ========================================================= */
+
+.sponsor-process {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    counter-reset: sponsor-step;
+}
+
+.sponsor-step {
+    position: relative;
+
+    padding: 30px 25px;
+
+    border-radius: var(--sponsor-radius);
+
+    background: #ffffff;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.sponsor-step-number {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: var(--sponsor-red);
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.sponsor-step h3 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+}
+
+.sponsor-step p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BROCHURE / PDF
+   ========================================================= */
+
+.sponsor-brochure {
+    position: relative;
+
+    padding: 70px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--sponsor-red),
+            #650000
+        );
+
+    color: #ffffff;
+}
+
+.sponsor-brochure-inner {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.sponsor-brochure-content {
+    max-width: 760px;
+}
+
+.sponsor-brochure-content h2 {
+    margin: 0 0 14px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+}
+
+.sponsor-brochure-content p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    line-height: 1.75;
+}
+
+.sponsor-brochure-actions {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   TERMS
+   ========================================================= */
+
+.sponsor-terms {
+    padding: 35px 0;
+
+    background: #f3f1eb;
+}
+
+.sponsor-terms-inner {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.sponsor-terms h3 {
+    margin: 0 0 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+}
+
+.sponsor-terms p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ENQUIRY CTA
+   ========================================================= */
+
+.sponsor-enquiry {
+    padding: 90px 0;
+
+    background: #ffffff;
+}
+
+.sponsor-enquiry-box {
+    position: relative;
+
+    padding: 70px 50px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111111,
+            #242424
+        );
+
+    color: #ffffff;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.sponsor-enquiry-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -160px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(217, 173, 36, 0.13);
+}
+
+.sponsor-enquiry-box h2 {
+    position: relative;
+
+    margin: 0 0 15px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+}
+
+.sponsor-enquiry-box p {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 0 auto 28px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.8;
+}
+
+.sponsor-enquiry-box .sponsor-buttons {
+    position: relative;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   SPONSOR LOGO / BRANDING GRID
+   ========================================================= */
+
+.sponsor-logo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.sponsor-logo-card {
+    min-height: 140px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+.sponsor-logo-card img {
+    max-width: 170px;
+    max-height: 80px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+
+/* Large Tablet */
+@media (max-width: 1100px) {
+
+    .sponsor-packages {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .sponsor-benefits {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .digital-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .sponsor-process {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .sponsor-logo-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .sponsor-hero {
+        min-height: 520px;
+    }
+
+    .sponsor-intro-grid,
+    .souvenir-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .sponsor-intro-image img {
+        min-height: 350px;
+    }
+
+    .souvenir-image img {
+        height: 350px;
+    }
+
+    .branding-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sponsor-brochure-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 650px) {
+
+    .sponsors-page .container {
+        width: min(
+            calc(100% - 28px),
+            var(--container-width)
+        );
+    }
+
+    .sponsor-section,
+    .sponsor-intro,
+    .sponsor-enquiry {
+        padding: 65px 0;
+    }
+
+    .sponsor-hero {
+        min-height: 620px;
+
+        background-position:
+            65% center;
+    }
+
+    .sponsor-hero-content {
+        padding: 70px 0;
+    }
+
+    .sponsor-hero h1 {
+        font-size: clamp(42px, 12vw, 62px);
+
+        line-height: 1.02;
+    }
+
+    .sponsor-hero p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .sponsor-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .sponsor-btn {
+        width: 100%;
+    }
+
+    .sponsor-section-heading {
+        margin-bottom: 38px;
+    }
+
+    .sponsor-section-heading h2 {
+        font-size: 35px;
+    }
+
+    .sponsor-benefits,
+    .sponsor-packages,
+    .digital-grid,
+    .sponsor-process {
+        grid-template-columns: 1fr;
+    }
+
+    .sponsor-card {
+        min-height: auto;
+    }
+
+    .souvenir-list {
+        grid-template-columns: 1fr;
+    }
+
+    .sponsor-brochure {
+        padding: 60px 0;
+    }
+
+    .sponsor-brochure-inner {
+        gap: 28px;
+    }
+
+    .sponsor-brochure-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .sponsor-brochure-actions .sponsor-btn {
+        width: 100%;
+    }
+
+    .sponsor-enquiry-box {
+        padding: 55px 25px;
+    }
+
+    .sponsor-logo-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .branding-card-image {
+        height: 220px;
+    }
+}
+
+
+/* Small Mobile */
+@media (max-width: 420px) {
+
+    .sponsor-hero {
+        min-height: 650px;
+    }
+
+    .sponsor-hero h1 {
+        font-size: 42px;
+    }
+
+    .sponsor-intro-image img {
+        min-height: 280px;
+    }
+
+    .souvenir-image img {
+        height: 280px;
+    }
+
+    .sponsor-benefit,
+    .sponsor-card,
+    .digital-card,
+    .sponsor-step {
+        padding: 25px 20px;
+    }
+
+    .sponsor-logo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.sponsors-page a:focus-visible,
+.sponsors-page button:focus-visible {
+    outline: 3px solid var(--sponsor-gold);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sponsors-page *,
+    .sponsors-page *::before,
+    .sponsors-page *::after {
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+        animation: none !important;
+    }
+}

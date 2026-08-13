@@ -1,0 +1,25 @@
+# ==========================================================
+# PBDPC Website - Robots.txt
+# Protappur Baroari Durga Puja Committee
+# ==========================================================
+
+User-agent: *
+
+# Allow all public pages
+Allow: /
+
+# Block private/system directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /components/
+Disallow: /api/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /tmp/
+
+# Block configuration/source files
+Disallow: /assets/js/config.js
+
+# Sitemap
+Sitemap: https://ranitmandal.github.io/PBDPC/sitemap.xml
