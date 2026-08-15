@@ -2285,6 +2285,12 @@ strong {
 
 }
 
+.member-social {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 
 /* ==========================================================
    SPONSORS
@@ -3651,7 +3657,7 @@ strong {
     overflow: hidden;
 
     background-image:
-        url("/assets/images/home/hero1.png");
+        url("/  PBDPC/assets/images/home/hero1.png");
 
     background-position: center;
     background-size: cover;
