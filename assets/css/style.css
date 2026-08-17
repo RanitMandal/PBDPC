@@ -3657,7 +3657,7 @@ strong {
     overflow: hidden;
 
     background-image:
-        url("/  PBDPC/assets/images/home/hero1.png");
+        url("/PBDPC/assets/images/home/hero1.png");
 
     background-position: center;
     background-size: cover;
@@ -4468,7 +4468,7 @@ strong {
 
     overflow: hidden;
 
-    background-image: url("/assets/images/home/hero1.png");
+    background-image: url("/PBDPC/assets/images/home/hero1.png");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
