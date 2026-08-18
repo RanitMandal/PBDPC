@@ -196,7 +196,7 @@ body.lightbox-open {
 }
 
 .gallery-grid .gallery-item,
-.gallery-grid > img {
+.gallery-grid>img {
     flex: 1 1 300px;
     max-width: calc(33.333% - 14px);
 }
@@ -209,7 +209,7 @@ body.lightbox-open {
 @media (max-width: 900px) {
 
     .gallery-grid .gallery-item,
-    .gallery-grid > img {
+    .gallery-grid>img {
         max-width: calc(50% - 10px);
     }
 
@@ -221,7 +221,7 @@ body.lightbox-open {
 @media (max-width: 560px) {
 
     .gallery-grid .gallery-item,
-    .gallery-grid > img,
+    .gallery-grid>img,
     .committee-grid .member-card {
         max-width: 100%;
     }
@@ -239,6 +239,7 @@ body.lightbox-open {
 .sponsor-marquee {
     overflow: hidden;
     position: relative;
+    padding-bottom: 20px;
 
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -251,7 +252,7 @@ body.lightbox-open {
 
     width: max-content;
 
-    animation: pbdpc-sponsor-scroll 55s linear infinite;
+    animation: pbdpc-sponsor-scroll 25s linear infinite;
 }
 
 .sponsor-marquee:hover .sponsor-track {
@@ -331,7 +332,7 @@ body.lightbox-open {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm, 0 8px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow-sm, 0 8px 25px rgba(0, 0, 0, .08));
     cursor: pointer;
 }
 
@@ -426,7 +427,7 @@ body.lightbox-open {
 
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm, 0 8px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow-sm, 0 8px 25px rgba(0, 0, 0, .08));
 }
 
 .video-wrapper iframe {
@@ -467,13 +468,13 @@ body.lightbox-open {
     font-weight: 600;
     color: var(--primary);
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
     transition: .25s;
 }
 
 .member-row:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow, 0 10px 25px rgba(0, 0, 0, .08));
 }
 
 @media (max-width: 640px) {
@@ -498,7 +499,7 @@ body.lightbox-open {
     border-radius: 14px;
     padding: 22px 24px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
     border-left: 4px solid var(--secondary, #D4AF37);
 
     transition: .25s;
@@ -506,7 +507,7 @@ body.lightbox-open {
 
 .volunteer-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow, 0 10px 25px rgba(0, 0, 0, .08));
 }
 
 .volunteer-card h3,
@@ -550,13 +551,13 @@ body.lightbox-open {
     border-radius: 16px;
     padding: 30px 26px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
     transition: .25s;
 }
 
 .history-info-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow, 0 10px 25px rgba(0, 0, 0, .08));
 }
 
 .history-card-icon {
@@ -604,7 +605,7 @@ body.lightbox-open {
     border-radius: 16px;
     padding: 30px 15px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
 }
 
 .history-stat strong {
@@ -724,7 +725,7 @@ body.lightbox-open {
     padding: 24px 26px;
     margin-bottom: 20px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
 }
 
 .info-box h3 {
@@ -780,13 +781,13 @@ body.lightbox-open {
     border-radius: 16px;
     padding: 30px 26px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
     transition: .25s;
 }
 
 .benefit-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow, 0 10px 25px rgba(0, 0, 0, .08));
 }
 
 .benefit-icon {
@@ -849,14 +850,14 @@ body.lightbox-open {
     padding: 32px 26px;
 
     border: 1px solid #eee;
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
 
     transition: .3s;
 }
 
 .sponsor-package:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg, 0 20px 40px rgba(0,0,0,.12));
+    box-shadow: var(--shadow-lg, 0 20px 40px rgba(0, 0, 0, .12));
 }
 
 .sponsor-package.featured {
@@ -966,8 +967,8 @@ body.lightbox-open {
     margin-top: 3px;
 }
 
-.sponsor-package > a,
-.sponsor-package > .btn {
+.sponsor-package>a,
+.sponsor-package>.btn {
     margin-top: auto;
     text-align: center;
 }
@@ -1057,7 +1058,7 @@ body.lightbox-open {
     border-radius: 20px;
     padding: 34px 38px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
 }
 
 .brochure-icon {
@@ -1111,7 +1112,7 @@ body.lightbox-open {
     display: block;
 
     border-radius: 20px;
-    box-shadow: var(--shadow-lg, 0 20px 40px rgba(0,0,0,.12));
+    box-shadow: var(--shadow-lg, 0 20px 40px rgba(0, 0, 0, .12));
 }
 
 .digital-content .section-subtitle {
@@ -1184,7 +1185,7 @@ body.lightbox-open {
     padding: 34px 24px 26px;
     text-align: center;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
 }
 
 .process-number {
@@ -1419,13 +1420,13 @@ body.lightbox-open {
     border-radius: 16px;
     padding: 30px 28px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.05));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .05));
     transition: .25s;
 }
 
 .contact-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow, 0 10px 25px rgba(0,0,0,.08));
+    box-shadow: var(--shadow, 0 10px 25px rgba(0, 0, 0, .08));
 }
 
 .contact-card h3 {
@@ -1449,7 +1450,7 @@ body.lightbox-open {
     font-weight: 600;
 }
 
-.contact-card > a {
+.contact-card>a {
     display: inline-block;
     margin-top: 10px;
     color: var(--secondary, #D4AF37);
@@ -1556,7 +1557,7 @@ body.lightbox-open {
     border-radius: 14px;
     padding: 22px 26px;
 
-    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0,0,0,.04));
+    box-shadow: var(--shadow-sm, 0 6px 18px rgba(0, 0, 0, .04));
 }
 
 .faq-item h3 {
